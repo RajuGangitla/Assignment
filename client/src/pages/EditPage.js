@@ -29,16 +29,13 @@ const EditPage = () => {
   useEffect(() => {
     const getPatient = async () => {
       try {
-        displaySpinner()
         const res = await axios.get(`/api/v1/patients/getdata/${id}`);
-        clearSpinner()
         if (res.data.success) {
           setValues(res.data.patient);
         } else {
           message.error("Cannot fetch patient details");
         }
       } catch (error) {
-        clearSpinner()
         message.error("Something went wrong");
       }
     };
