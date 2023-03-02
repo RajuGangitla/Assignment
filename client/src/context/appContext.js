@@ -53,7 +53,6 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       clearSpinner();
       console.log(error);
-      message.error("Unable to get all patients data");
     }
   };
 
